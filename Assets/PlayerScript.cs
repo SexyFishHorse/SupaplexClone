@@ -13,25 +13,25 @@ public class PlayerScript : MonoBehaviour
         var direction = Vector3.zero;
         var numKeyDown = 0;
 
-        if (Input.GetKey(KeyCode.A))
+        if (Input.GetKeyDown(KeyCode.A))
         {
             numKeyDown++;
             direction = Vector3.left;
         }
 
-        if (Input.GetKey(KeyCode.D))
+        if (Input.GetKeyDown(KeyCode.D))
         {
             numKeyDown++;
             direction = Vector3.right;
         }
 
-        if (Input.GetKey(KeyCode.W))
+        if (Input.GetKeyDown(KeyCode.W))
         {
             numKeyDown++;
             direction = Vector3.up;
         }
 
-        if (Input.GetKey(KeyCode.S))
+        if (Input.GetKeyDown(KeyCode.S))
         {
             numKeyDown++;
             direction = Vector3.down;
@@ -39,7 +39,7 @@ public class PlayerScript : MonoBehaviour
 
         if (direction != Vector3.zero && numKeyDown == 1)
         {
-            transform.position += direction * Time.deltaTime * 10;
+            transform.position += direction;
         }
     }
 }
